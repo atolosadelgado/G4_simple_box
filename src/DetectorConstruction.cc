@@ -1,63 +1,55 @@
-////////////////////////////////////////////////////////////////////
-//
-//  Dec-2021 E. Nacher (after JL. Tain) --> DetectorConstruction.cc
-//
-////////////////////////////////////////////////////////////////////
-
 
 #include "DetectorConstruction.hh"
-
 #include "G4Material.hh"
-#include "G4Tubs.hh"
+#include "G4NistManager.hh"
 #include "G4Box.hh"
-#include "G4Cons.hh"
-#include "G4Trd.hh"
-#include "G4Polyhedra.hh"
-#include "G4Element.hh"
-#include "G4ElementTable.hh"
+#include "G4TwistedTubs.hh"
 #include "G4LogicalVolume.hh"
 #include "G4PVPlacement.hh"
-#include "G4RotationMatrix.hh"
-#include "G4Transform3D.hh"
+#include "G4SystemOfUnits.hh"
 #include "G4VisAttributes.hh"
-#include "G4Colour.hh"
 
-using namespace CLHEP;
+DetectorConstruction::DetectorConstruction() : G4VUserDetectorConstruction() {}
 
-DetectorConstruction::DetectorConstruction()
-{ }
+DetectorConstruction::~DetectorConstruction() {}
 
-DetectorConstruction::~DetectorConstruction()
-{ }
 
-G4VPhysicalVolume* DetectorConstruction::Construct()
-{   
-    // Aluminum
-    double density = 2.700*g/cm3;
-    double a = 26.98*g/mole;
-    G4Material* Alum = new G4Material("Aluminium", 13., a, density);
+G4VPhysicalVolume* DetectorConstruction::Construct() {
 
-    G4double WorldSize= 200.*cm;
+    G4NistManager* nist = G4NistManager::Instance();
+    G4Material* air = nist->FindOrBuildMaterial("G4_AIR");
+
+    // Define the universe box
+    G4double worldSizeXY = 1.0*m;
+    G4double worldSizeZ = 1.0*m;
+
+    G4Box* solidWorld = new G4Box("World", worldSizeXY, worldSizeXY, worldSizeZ);
+    G4LogicalVolume* logicWorld = new G4LogicalVolume(solidWorld, air, "World");
+    G4VPhysicalVolume* physWorld = new G4PVPlacement(0, G4ThreeVector(), logicWorld, "World", 0, false, 0, true);
+
+    // Define the twisted tube
+    G4double twistedTubeInnerRadius = 10.0*mm;
+    G4double twistedTubeOuterRadius = 30.0*mm;
+    G4double twistedTubeLength = 100.0*mm;
+    G4double twistedTubeTwistAngle = 45.0*degree;
+    G4double twistedTubeTwistPhi = 90.0*degree;
     
-    G4Box*
-    SolidWorld = new G4Box("World",                               //its name
-                           WorldSize/2,WorldSize/2,WorldSize/2);  //its size
-    
-    G4LogicalVolume*
-    LogicWorld = new G4LogicalVolume(SolidWorld,      //its solid
-                                     Alum,	      //its material
-                                     "World");        //its name
-  
-   
-    G4VPhysicalVolume*
-    PhysiWorld = new G4PVPlacement(0,               //no rotation
-                                   G4ThreeVector(),	//at (0,0,0)
-                                   "World",         //its name
-                                   LogicWorld,		//its logical volume
-                                   NULL,            //its mother  volume
-                                   false,	       	//no boolean operation
-                                   0);              //copy number
-  return PhysiWorld;
 
+    G4TwistedTubs* solidTwistedTube = new G4TwistedTubs("TwistedTube", twistedTubeTwistAngle, twistedTubeInnerRadius, twistedTubeOuterRadius, twistedTubeLength,twistedTubeTwistPhi);
+    G4LogicalVolume* logicTwistedTube = new G4LogicalVolume(solidTwistedTube, air, "TwistedTube");
+
+    // Place the twisted tube inside the world
+    G4ThreeVector twistedTubePosition = G4ThreeVector(0, 0, 0);
+    new G4PVPlacement(0, twistedTubePosition, logicTwistedTube, "TwistedTube", logicWorld, false, 0, true);
+
+    // Visualization attributes (optional)
+    G4VisAttributes* worldVisAttr = new G4VisAttributes(G4Colour(1.0, 1.0, 1.0, 0.1)); // Transparent white
+    logicWorld->SetVisAttributes(worldVisAttr);
+
+    G4VisAttributes* twistedTubeVisAttr = new G4VisAttributes(G4Colour(0.0, 0.0, 1.0)); // Blue
+    logicTwistedTube->SetVisAttributes(twistedTubeVisAttr);
+
+    return physWorld;
 }
+
 

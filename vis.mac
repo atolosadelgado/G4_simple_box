@@ -42,4 +42,7 @@
 /gps/energy 10 MeV
 /gps/ang/type iso
 
+#/random/setSavingFlag 1
+/random/resetEngineFrom
 /run/beamOn 1
+
