@@ -5,15 +5,8 @@
 /////////////////////////////////////////////////////////
 
 
-#include "G4RunManager.hh"
 #include "globals.hh"
-
-
-
 #include "G4UnitsTable.hh"
-
-#include "G4VisExecutive.hh"
-#include "G4UIExecutive.hh"
 
 #include "G4ios.hh"
 #include "fstream"
@@ -34,11 +27,23 @@ int main()
 
     G4TwistedTubs* solidTwistedTube = new G4TwistedTubs("TwistedTube", twistedTubeTwistAngle, twistedTubeInnerRadius, twistedTubeOuterRadius, twistedTubeLength,twistedTubeTwistPhi);
     G4ThreeVector p(0,0,0);
-    G4ThreeVector v(0,0,1);
+    G4ThreeVector v(1,0,0);
 
-    double d2in = solidTwistedTube->DistanceToIn(p,v);
+
+    std::cout << "First call: " <<  solidTwistedTube->DistanceToIn(p,v) << std::endl;
+    std::cout << "Second call: " <<  solidTwistedTube->DistanceToIn(p,v) << std::endl;
+    std::cout << "Third call: " << solidTwistedTube->DistanceToIn(p,v) << std::endl;
+
+    G4ThreeVector p2( 2*twistedTubeOuterRadius,0,0);
+    G4ThreeVector v2(-1,0,0);
+
+    double d2in = solidTwistedTube->DistanceToIn(p2,v2);
     std::cout << d2in << std::endl;
-  
+
+    G4ThreeVector p3( 2*twistedTubeLength,0,0);
+    G4ThreeVector v3(0,0,-1);
+    d2in = solidTwistedTube->DistanceToIn(p3,v3);
+    std::cout << d2in << std::endl;
   return 0;
 }
 
