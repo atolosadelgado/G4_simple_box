@@ -26,23 +26,27 @@
 # Re-establish auto refreshing and verbosity:
 /vis/viewer/set/autoRefresh true
 
-/run/verbose 0
-/event/verbose 0
+/run/verbose 2
+/process/verbose 2
+/cuts/verbose 2
+/event/verbose 2
 /tracking/verbose 2
-/control/verbose 0
+/control/verbose 2
 /gps/verbose 0
 
-/gps/particle alpha
+/gps/particle gamma
 
 /gps/number 1
-/gps/pos/type Plane
-/gps/pos/shape Circle
-/gps/pos/radius 0.5 mm
+/gps/pos/type Point
+# /gps/pos/shape Circle
+# /gps/pos/radius 0.5 mm
 /gps/pos/centre  0 0 0  mm
 /gps/energy 200 GeV
 /gps/ang/type iso
+/gps/ang/mintheta 90 deg
+/gps/ang/maxtheta 90 deg
 
-/run/setCut 10 mm
+#/run/setCut 10 mm
 
 #/random/setSavingFlag 1
 /random/resetEngineFrom

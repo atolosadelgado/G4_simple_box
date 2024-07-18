@@ -27,6 +27,9 @@
 #include "G4UImanager.hh"
 #include "G4UIterminal.hh"
 
+#include "FTFP_BERT.hh"
+
+
 int main(int argc, char** argv)
 {
   
@@ -54,7 +57,7 @@ int main(int argc, char** argv)
 
   // set mandatory initialization classes
   runManager->SetUserInitialization(new DetectorConstruction);
-  runManager->SetUserInitialization(new PhysicsList);
+  runManager->SetUserInitialization(new FTFP_BERT);
 
    // set aditional user action classes
   RunAction* run = new RunAction;

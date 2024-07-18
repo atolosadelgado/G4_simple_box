@@ -1,0 +1,883 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<gdml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://service-spi.web.cern.ch/service-spi/app/releases/GDML/schema/gdml.xsd">
+
+  <define/>
+
+  <materials>
+    <isotope N="3" Z="2" name="He30x55559d0dbad0">
+      <atom unit="g/mole" value="3.01692961808401"/>
+    </isotope>
+    <isotope N="4" Z="2" name="He40x55559dd9f2e0">
+      <atom unit="g/mole" value="4.00264393551385"/>
+    </isotope>
+    <element name="He0x55559dd7cf30">
+      <fraction n="1.36999949310019e-06" ref="He30x55559d0dbad0"/>
+      <fraction n="0.999998630000507" ref="He40x55559dd9f2e0"/>
+    </element>
+    <isotope N="1" Z="1" name="H10x55559dda10c0">
+      <atom unit="g/mole" value="1.00782503081372"/>
+    </isotope>
+    <isotope N="2" Z="1" name="H20x55559dd5f610">
+      <atom unit="g/mole" value="2.01410199966617"/>
+    </isotope>
+    <element name="H0x55559dd7ce70">
+      <fraction n="0.999885" ref="H10x55559dda10c0"/>
+      <fraction n="0.000115" ref="H20x55559dd5f610"/>
+    </element>
+    <isotope N="12" Z="6" name="C120x55559dd70d60">
+      <atom unit="g/mole" value="12"/>
+    </isotope>
+    <isotope N="13" Z="6" name="C130x55559dd6c810">
+      <atom unit="g/mole" value="13.0034"/>
+    </isotope>
+    <element name="C0x55559dd78cb0">
+      <fraction n="0.9893" ref="C120x55559dd70d60"/>
+      <fraction n="0.0107" ref="C130x55559dd6c810"/>
+    </element>
+    <material name="GasHe_90Isob_100x55559d131cb0" state="gas">
+      <T unit="K" value="293.15"/>
+      <P unit="pascal" value="101325.009296588"/>
+      <MEE unit="eV" value="48.8432512216626"/>
+      <D unit="g/cm3" value="0.0003984"/>
+      <fraction n="0.382635100446205" ref="He0x55559dd7cf30"/>
+      <fraction n="0.107061807167701" ref="H0x55559dd7ce70"/>
+      <fraction n="0.510303092386095" ref="C0x55559dd78cb0"/>
+    </material>
+    <isotope N="14" Z="7" name="N140x55559dd175c0">
+      <atom unit="g/mole" value="14.0031"/>
+    </isotope>
+    <isotope N="15" Z="7" name="N150x55559dd01440">
+      <atom unit="g/mole" value="15.0001"/>
+    </isotope>
+    <element name="N0x55559dd8e5c0">
+      <fraction n="0.99632" ref="N140x55559dd175c0"/>
+      <fraction n="0.00368" ref="N150x55559dd01440"/>
+    </element>
+    <isotope N="16" Z="8" name="O160x55559dd673c0">
+      <atom unit="g/mole" value="15.9949"/>
+    </isotope>
+    <isotope N="17" Z="8" name="O170x55559dd70db0">
+      <atom unit="g/mole" value="16.9991"/>
+    </isotope>
+    <isotope N="18" Z="8" name="O180x55559dd7baf0">
+      <atom unit="g/mole" value="17.9992"/>
+    </isotope>
+    <element name="O0x55559dd87fb0">
+      <fraction n="0.99757" ref="O160x55559dd673c0"/>
+      <fraction n="0.00038" ref="O170x55559dd70db0"/>
+      <fraction n="0.00205" ref="O180x55559dd7baf0"/>
+    </element>
+    <isotope N="36" Z="18" name="Ar360x55559dd7d800">
+      <atom unit="g/mole" value="35.9675"/>
+    </isotope>
+    <isotope N="38" Z="18" name="Ar380x55559dd7d850">
+      <atom unit="g/mole" value="37.9627"/>
+    </isotope>
+    <isotope N="40" Z="18" name="Ar400x55559dd77ca0">
+      <atom unit="g/mole" value="39.9624"/>
+    </isotope>
+    <element name="Ar0x55559db01200">
+      <fraction n="0.003365" ref="Ar360x55559dd7d800"/>
+      <fraction n="0.000632" ref="Ar380x55559dd7d850"/>
+      <fraction n="0.996003" ref="Ar400x55559dd77ca0"/>
+    </element>
+    <material name="Air0x55559d9dd9f0" state="gas">
+      <T unit="K" value="293.15"/>
+      <P unit="pascal" value="101325.009296588"/>
+      <MEE unit="eV" value="85.643664635028"/>
+      <D unit="g/cm3" value="0.0012"/>
+      <fraction n="0.754" ref="N0x55559dd8e5c0"/>
+      <fraction n="0.234" ref="O0x55559dd87fb0"/>
+      <fraction n="0.012" ref="Ar0x55559db01200"/>
+    </material>
+  </materials>
+
+  <solids>
+    <twistedtubs aunit="deg" lunit="mm" midinnerrad="356.076790851044" midouterrad="367.923209148956" name="DCH_v2_layer1_cell_shape_0x55559c34c4500x55559dd9f590" negativeEndz="-2000" phi="1.30204220486918" positiveEndz="2000" twistedangle="30"/>
+    <box lunit="mm" name="world_volume_shape_0x55559c64b3b00x55559dd608d0" x="50000" y="50000" z="50000"/>
+  </solids>
+
+  <structure>
+    <volume name="DCH_v2_layer1_cell0x55559dd5a810">
+      <materialref ref="GasHe_90Isob_100x55559d131cb0"/>
+      <solidref ref="DCH_v2_layer1_cell_shape_0x55559c34c4500x55559dd9f590"/>
+    </volume>
+    <volume name="world_volume0x55559dd7f710">
+      <materialref ref="Air0x55559d9dd9f0"/>
+      <solidref ref="world_volume_shape_0x55559c64b3b00x55559dd608d0"/>
+      <physvol copynumber="2" name="DCH_v2_layer1_cell_20x55559047dbd0">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_20x55559047dbd0_rot" unit="deg" x="0" y="0" z="-4.07551055121729"/>
+      </physvol>
+      <physvol copynumber="1" name="DCH_v2_layer1_cell_10x55559dd58cc0">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_10x55559dd58cc0_rot" unit="deg" x="0" y="0" z="-2.20051055121729"/>
+      </physvol>
+      <physvol name="DCH_v2_layer1_cell_00x55559d4098d0">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_00x55559d4098d0_rot" unit="deg" x="0" y="0" z="-0.325510551217294"/>
+      </physvol>
+      <physvol copynumber="126" name="DCH_v2_layer1_cell_1260x55559dd6c040">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1260x55559dd6c040_rot" unit="deg" x="0" y="0" z="123.424489448783"/>
+      </physvol>
+      <physvol copynumber="127" name="DCH_v2_layer1_cell_1270x55559dd74040">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1270x55559dd74040_rot" unit="deg" x="0" y="0" z="121.549489448783"/>
+      </physvol>
+      <physvol copynumber="128" name="DCH_v2_layer1_cell_1280x55559dd9f1a0">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1280x55559dd9f1a0_rot" unit="deg" x="0" y="0" z="119.674489448783"/>
+      </physvol>
+      <physvol copynumber="3" name="DCH_v2_layer1_cell_30x55559dd6a9d0">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_30x55559dd6a9d0_rot" unit="deg" x="0" y="0" z="-5.95051055121729"/>
+      </physvol>
+      <physvol copynumber="4" name="DCH_v2_layer1_cell_40x55559cdcc3e0">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_40x55559cdcc3e0_rot" unit="deg" x="0" y="0" z="-7.82551055121729"/>
+      </physvol>
+      <physvol copynumber="5" name="DCH_v2_layer1_cell_50x55559dd98650">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_50x55559dd98650_rot" unit="deg" x="0" y="0" z="-9.70051055121729"/>
+      </physvol>
+      <physvol copynumber="6" name="DCH_v2_layer1_cell_60x55559dd98800">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_60x55559dd98800_rot" unit="deg" x="0" y="0" z="-11.5755105512173"/>
+      </physvol>
+      <physvol copynumber="7" name="DCH_v2_layer1_cell_70x55559dd610c0">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_70x55559dd610c0_rot" unit="deg" x="0" y="0" z="-13.4505105512173"/>
+      </physvol>
+      <physvol copynumber="8" name="DCH_v2_layer1_cell_80x55559dd89380">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_80x55559dd89380_rot" unit="deg" x="0" y="0" z="-15.3255105512173"/>
+      </physvol>
+      <physvol copynumber="9" name="DCH_v2_layer1_cell_90x55559dd89560">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_90x55559dd89560_rot" unit="deg" x="0" y="0" z="-17.2005105512173"/>
+      </physvol>
+      <physvol copynumber="10" name="DCH_v2_layer1_cell_100x55559dd8f8b0">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_100x55559dd8f8b0_rot" unit="deg" x="0" y="0" z="-19.0755105512173"/>
+      </physvol>
+      <physvol copynumber="11" name="DCH_v2_layer1_cell_110x55559dd86180">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_110x55559dd86180_rot" unit="deg" x="0" y="0" z="-20.9505105512173"/>
+      </physvol>
+      <physvol copynumber="12" name="DCH_v2_layer1_cell_120x55559dd78a50">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_120x55559dd78a50_rot" unit="deg" x="0" y="0" z="-22.8255105512173"/>
+      </physvol>
+      <physvol copynumber="13" name="DCH_v2_layer1_cell_130x55559dd78c10">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_130x55559dd78c10_rot" unit="deg" x="0" y="0" z="-24.7005105512173"/>
+      </physvol>
+      <physvol copynumber="14" name="DCH_v2_layer1_cell_140x55559d1d79f0">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_140x55559d1d79f0_rot" unit="deg" x="0" y="0" z="-26.5755105512173"/>
+      </physvol>
+      <physvol copynumber="15" name="DCH_v2_layer1_cell_150x55559dd8d2e0">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_150x55559dd8d2e0_rot" unit="deg" x="0" y="0" z="-28.4505105512173"/>
+      </physvol>
+      <physvol copynumber="16" name="DCH_v2_layer1_cell_160x55559dd8d4c0">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_160x55559dd8d4c0_rot" unit="deg" x="0" y="0" z="-30.3255105512173"/>
+      </physvol>
+      <physvol copynumber="17" name="DCH_v2_layer1_cell_170x555590480ed0">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_170x555590480ed0_rot" unit="deg" x="0" y="0" z="-32.2005105512173"/>
+      </physvol>
+      <physvol copynumber="18" name="DCH_v2_layer1_cell_180x55559dd981f0">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_180x55559dd981f0_rot" unit="deg" x="0" y="0" z="-34.0755105512173"/>
+      </physvol>
+      <physvol copynumber="19" name="DCH_v2_layer1_cell_190x55559dd983a0">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_190x55559dd983a0_rot" unit="deg" x="0" y="0" z="-35.9505105512173"/>
+      </physvol>
+      <physvol copynumber="20" name="DCH_v2_layer1_cell_200x55559cdd1ea0">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_200x55559cdd1ea0_rot" unit="deg" x="0" y="0" z="-37.8255105512173"/>
+      </physvol>
+      <physvol copynumber="21" name="DCH_v2_layer1_cell_210x55559cdd2080">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_210x55559cdd2080_rot" unit="deg" x="0" y="0" z="-39.7005105512173"/>
+      </physvol>
+      <physvol copynumber="22" name="DCH_v2_layer1_cell_220x55559dd63ae0">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_220x55559dd63ae0_rot" unit="deg" x="0" y="0" z="-41.5755105512173"/>
+      </physvol>
+      <physvol copynumber="23" name="DCH_v2_layer1_cell_230x55559dd63cb0">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_230x55559dd63cb0_rot" unit="deg" x="0" y="0" z="-43.4505105512173"/>
+      </physvol>
+      <physvol copynumber="24" name="DCH_v2_layer1_cell_240x55559dd7f4a0">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_240x55559dd7f4a0_rot" unit="deg" x="0" y="0" z="-45.3255105512173"/>
+      </physvol>
+      <physvol copynumber="25" name="DCH_v2_layer1_cell_250x55559dd7f680">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_250x55559dd7f680_rot" unit="deg" x="0" y="0" z="-47.2005105512173"/>
+      </physvol>
+      <physvol copynumber="26" name="DCH_v2_layer1_cell_260x55559dd96750">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_260x55559dd96750_rot" unit="deg" x="0" y="0" z="-49.0755105512173"/>
+      </physvol>
+      <physvol copynumber="27" name="DCH_v2_layer1_cell_270x55559dd96930">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_270x55559dd96930_rot" unit="deg" x="0" y="0" z="-50.9505105512173"/>
+      </physvol>
+      <physvol copynumber="28" name="DCH_v2_layer1_cell_280x55559dd63660">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_280x55559dd63660_rot" unit="deg" x="0" y="0" z="-52.8255105512173"/>
+      </physvol>
+      <physvol copynumber="29" name="DCH_v2_layer1_cell_290x55559dd63840">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_290x55559dd63840_rot" unit="deg" x="0" y="0" z="-54.7005105512173"/>
+      </physvol>
+      <physvol copynumber="30" name="DCH_v2_layer1_cell_300x55559dd98c50">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_300x55559dd98c50_rot" unit="deg" x="0" y="0" z="-56.5755105512173"/>
+      </physvol>
+      <physvol copynumber="31" name="DCH_v2_layer1_cell_310x55559dd98e30">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_310x55559dd98e30_rot" unit="deg" x="0" y="0" z="-58.4505105512173"/>
+      </physvol>
+      <physvol copynumber="32" name="DCH_v2_layer1_cell_320x55559dd60560">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_320x55559dd60560_rot" unit="deg" x="0" y="0" z="-60.3255105512173"/>
+      </physvol>
+      <physvol copynumber="33" name="DCH_v2_layer1_cell_330x55559dd60740">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_330x55559dd60740_rot" unit="deg" x="0" y="0" z="-62.2005105512173"/>
+      </physvol>
+      <physvol copynumber="34" name="DCH_v2_layer1_cell_340x55559cdc6030">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_340x55559cdc6030_rot" unit="deg" x="0" y="0" z="-64.0755105512173"/>
+      </physvol>
+      <physvol copynumber="35" name="DCH_v2_layer1_cell_350x55559cdc6210">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_350x55559cdc6210_rot" unit="deg" x="0" y="0" z="-65.9505105512173"/>
+      </physvol>
+      <physvol copynumber="36" name="DCH_v2_layer1_cell_360x55559dd6a3c0">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_360x55559dd6a3c0_rot" unit="deg" x="0" y="0" z="-67.8255105512173"/>
+      </physvol>
+      <physvol copynumber="37" name="DCH_v2_layer1_cell_370x55559dd6a5a0">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_370x55559dd6a5a0_rot" unit="deg" x="0" y="0" z="-69.7005105512173"/>
+      </physvol>
+      <physvol copynumber="38" name="DCH_v2_layer1_cell_380x55559dd58580">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_380x55559dd58580_rot" unit="deg" x="0" y="0" z="-71.5755105512173"/>
+      </physvol>
+      <physvol copynumber="39" name="DCH_v2_layer1_cell_390x55559dd58710">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_390x55559dd58710_rot" unit="deg" x="0" y="0" z="-73.4505105512173"/>
+      </physvol>
+      <physvol copynumber="40" name="DCH_v2_layer1_cell_400x55559dd588f0">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_400x55559dd588f0_rot" unit="deg" x="0" y="0" z="-75.3255105512173"/>
+      </physvol>
+      <physvol copynumber="41" name="DCH_v2_layer1_cell_410x55559dda0db0">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_410x55559dda0db0_rot" unit="deg" x="0" y="0" z="-77.2005105512173"/>
+      </physvol>
+      <physvol copynumber="42" name="DCH_v2_layer1_cell_420x55559dda0f90">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_420x55559dda0f90_rot" unit="deg" x="0" y="0" z="-79.0755105512173"/>
+      </physvol>
+      <physvol copynumber="43" name="DCH_v2_layer1_cell_430x55559dd6c480">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_430x55559dd6c480_rot" unit="deg" x="0" y="0" z="-80.9505105512173"/>
+      </physvol>
+      <physvol copynumber="44" name="DCH_v2_layer1_cell_440x55559dd6c660">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_440x55559dd6c660_rot" unit="deg" x="0" y="0" z="-82.8255105512173"/>
+      </physvol>
+      <physvol copynumber="45" name="DCH_v2_layer1_cell_450x55559dd82cc0">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_450x55559dd82cc0_rot" unit="deg" x="0" y="0" z="-84.7005105512173"/>
+      </physvol>
+      <physvol copynumber="46" name="DCH_v2_layer1_cell_460x55559dd82ea0">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_460x55559dd82ea0_rot" unit="deg" x="0" y="0" z="-86.5755105512173"/>
+      </physvol>
+      <physvol copynumber="47" name="DCH_v2_layer1_cell_470x55559dd6c880">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_470x55559dd6c880_rot" unit="deg" x="0" y="0" z="-88.4505105512173"/>
+      </physvol>
+      <physvol copynumber="48" name="DCH_v2_layer1_cell_480x55559dd6ca10">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_480x55559dd6ca10_rot" unit="deg" x="0" y="0" z="-90.3255105512173"/>
+      </physvol>
+      <physvol copynumber="49" name="DCH_v2_layer1_cell_490x55559dd6cbf0">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_490x55559dd6cbf0_rot" unit="deg" x="0" y="0" z="-92.2005105512173"/>
+      </physvol>
+      <physvol copynumber="50" name="DCH_v2_layer1_cell_500x55559dd71040">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_500x55559dd71040_rot" unit="deg" x="0" y="0" z="-94.0755105512173"/>
+      </physvol>
+      <physvol copynumber="51" name="DCH_v2_layer1_cell_510x55559dd71220">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_510x55559dd71220_rot" unit="deg" x="0" y="0" z="-95.9505105512173"/>
+      </physvol>
+      <physvol copynumber="52" name="DCH_v2_layer1_cell_520x55559dd78ef0">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_520x55559dd78ef0_rot" unit="deg" x="0" y="0" z="-97.8255105512173"/>
+      </physvol>
+      <physvol copynumber="53" name="DCH_v2_layer1_cell_530x55559dd790b0">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_530x55559dd790b0_rot" unit="deg" x="0" y="0" z="-99.7005105512173"/>
+      </physvol>
+      <physvol copynumber="54" name="DCH_v2_layer1_cell_540x55559dd5d180">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_540x55559dd5d180_rot" unit="deg" x="0" y="0" z="-101.575510551217"/>
+      </physvol>
+      <physvol copynumber="55" name="DCH_v2_layer1_cell_550x55559dd5d320">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_550x55559dd5d320_rot" unit="deg" x="0" y="0" z="-103.450510551217"/>
+      </physvol>
+      <physvol copynumber="56" name="DCH_v2_layer1_cell_560x55559dd5d500">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_560x55559dd5d500_rot" unit="deg" x="0" y="0" z="-105.325510551217"/>
+      </physvol>
+      <physvol copynumber="57" name="DCH_v2_layer1_cell_570x55559dd7a780">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_570x55559dd7a780_rot" unit="deg" x="0" y="0" z="-107.200510551217"/>
+      </physvol>
+      <physvol copynumber="58" name="DCH_v2_layer1_cell_580x55559dd7a960">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_580x55559dd7a960_rot" unit="deg" x="0" y="0" z="-109.075510551217"/>
+      </physvol>
+      <physvol copynumber="59" name="DCH_v2_layer1_cell_590x55559dd6f100">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_590x55559dd6f100_rot" unit="deg" x="0" y="0" z="-110.950510551217"/>
+      </physvol>
+      <physvol copynumber="60" name="DCH_v2_layer1_cell_600x55559dd6f2c0">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_600x55559dd6f2c0_rot" unit="deg" x="0" y="0" z="-112.825510551217"/>
+      </physvol>
+      <physvol copynumber="61" name="DCH_v2_layer1_cell_610x55559dd6f4a0">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_610x55559dd6f4a0_rot" unit="deg" x="0" y="0" z="-114.700510551217"/>
+      </physvol>
+      <physvol copynumber="62" name="DCH_v2_layer1_cell_620x55559dd7db30">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_620x55559dd7db30_rot" unit="deg" x="0" y="0" z="-116.575510551217"/>
+      </physvol>
+      <physvol copynumber="63" name="DCH_v2_layer1_cell_630x55559dd7dd10">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_630x55559dd7dd10_rot" unit="deg" x="0" y="0" z="-118.450510551217"/>
+      </physvol>
+      <physvol copynumber="64" name="DCH_v2_layer1_cell_640x55559dd5e4e0">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_640x55559dd5e4e0_rot" unit="deg" x="0" y="0" z="-120.325510551217"/>
+      </physvol>
+      <physvol copynumber="65" name="DCH_v2_layer1_cell_650x55559dd5e690">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_650x55559dd5e690_rot" unit="deg" x="0" y="0" z="-122.200510551217"/>
+      </physvol>
+      <physvol copynumber="66" name="DCH_v2_layer1_cell_660x55559dd5e870">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_660x55559dd5e870_rot" unit="deg" x="0" y="0" z="-124.075510551217"/>
+      </physvol>
+      <physvol copynumber="67" name="DCH_v2_layer1_cell_670x55559dd62220">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_670x55559dd62220_rot" unit="deg" x="0" y="0" z="-125.950510551217"/>
+      </physvol>
+      <physvol copynumber="68" name="DCH_v2_layer1_cell_680x55559dd62400">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_680x55559dd62400_rot" unit="deg" x="0" y="0" z="-127.825510551217"/>
+      </physvol>
+      <physvol copynumber="69" name="DCH_v2_layer1_cell_690x55559dda1300">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_690x55559dda1300_rot" unit="deg" x="0" y="0" z="-129.700510551217"/>
+      </physvol>
+      <physvol copynumber="70" name="DCH_v2_layer1_cell_700x55559dda14e0">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_700x55559dda14e0_rot" unit="deg" x="0" y="0" z="-131.575510551217"/>
+      </physvol>
+      <physvol copynumber="71" name="DCH_v2_layer1_cell_710x55559dd7d0a0">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_710x55559dd7d0a0_rot" unit="deg" x="0" y="0" z="-133.450510551217"/>
+      </physvol>
+      <physvol copynumber="72" name="DCH_v2_layer1_cell_720x55559dd7d260">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_720x55559dd7d260_rot" unit="deg" x="0" y="0" z="-135.325510551217"/>
+      </physvol>
+      <physvol copynumber="73" name="DCH_v2_layer1_cell_730x55559dd7d440">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_730x55559dd7d440_rot" unit="deg" x="0" y="0" z="-137.200510551217"/>
+      </physvol>
+      <physvol copynumber="74" name="DCH_v2_layer1_cell_740x55559dd7ac30">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_740x55559dd7ac30_rot" unit="deg" x="0" y="0" z="-139.075510551217"/>
+      </physvol>
+      <physvol copynumber="75" name="DCH_v2_layer1_cell_750x55559dd7ae10">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_750x55559dd7ae10_rot" unit="deg" x="0" y="0" z="-140.950510551217"/>
+      </physvol>
+      <physvol copynumber="76" name="DCH_v2_layer1_cell_760x55559dd86580">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_760x55559dd86580_rot" unit="deg" x="0" y="0" z="-142.825510551217"/>
+      </physvol>
+      <physvol copynumber="77" name="DCH_v2_layer1_cell_770x55559dd86740">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_770x55559dd86740_rot" unit="deg" x="0" y="0" z="-144.700510551217"/>
+      </physvol>
+      <physvol copynumber="78" name="DCH_v2_layer1_cell_780x55559dd86920">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_780x55559dd86920_rot" unit="deg" x="0" y="0" z="-146.575510551217"/>
+      </physvol>
+      <physvol copynumber="79" name="DCH_v2_layer1_cell_790x55559dd64ee0">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_790x55559dd64ee0_rot" unit="deg" x="0" y="0" z="-148.450510551217"/>
+      </physvol>
+      <physvol copynumber="80" name="DCH_v2_layer1_cell_800x55559dd650c0">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_800x55559dd650c0_rot" unit="deg" x="0" y="0" z="-150.325510551217"/>
+      </physvol>
+      <physvol copynumber="81" name="DCH_v2_layer1_cell_810x55559dd86a80">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_810x55559dd86a80_rot" unit="deg" x="0" y="0" z="-152.200510551217"/>
+      </physvol>
+      <physvol copynumber="82" name="DCH_v2_layer1_cell_820x55559dd86c30">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_820x55559dd86c30_rot" unit="deg" x="0" y="0" z="-154.075510551217"/>
+      </physvol>
+      <physvol copynumber="83" name="DCH_v2_layer1_cell_830x55559dd86e10">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_830x55559dd86e10_rot" unit="deg" x="0" y="0" z="-155.950510551217"/>
+      </physvol>
+      <physvol copynumber="84" name="DCH_v2_layer1_cell_840x55559dd96c30">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_840x55559dd96c30_rot" unit="deg" x="0" y="0" z="-157.825510551217"/>
+      </physvol>
+      <physvol copynumber="85" name="DCH_v2_layer1_cell_850x55559dd96e10">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_850x55559dd96e10_rot" unit="deg" x="0" y="0" z="-159.700510551217"/>
+      </physvol>
+      <physvol copynumber="86" name="DCH_v2_layer1_cell_860x55559dd88d30">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_860x55559dd88d30_rot" unit="deg" x="0" y="0" z="-161.575510551217"/>
+      </physvol>
+      <physvol copynumber="87" name="DCH_v2_layer1_cell_870x55559dd88f10">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_870x55559dd88f10_rot" unit="deg" x="0" y="0" z="-163.450510551217"/>
+      </physvol>
+      <physvol copynumber="88" name="DCH_v2_layer1_cell_880x55559dd8f260">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_880x55559dd8f260_rot" unit="deg" x="0" y="0" z="-165.325510551217"/>
+      </physvol>
+      <physvol copynumber="89" name="DCH_v2_layer1_cell_890x55559dd8f420">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_890x55559dd8f420_rot" unit="deg" x="0" y="0" z="-167.200510551217"/>
+      </physvol>
+      <physvol copynumber="90" name="DCH_v2_layer1_cell_900x55559dd8f600">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_900x55559dd8f600_rot" unit="deg" x="0" y="0" z="-169.075510551217"/>
+      </physvol>
+      <physvol copynumber="91" name="DCH_v2_layer1_cell_910x55559dd828c0">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_910x55559dd828c0_rot" unit="deg" x="0" y="0" z="-170.950510551217"/>
+      </physvol>
+      <physvol copynumber="92" name="DCH_v2_layer1_cell_920x55559dd82aa0">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_920x55559dd82aa0_rot" unit="deg" x="0" y="0" z="-172.825510551217"/>
+      </physvol>
+      <physvol copynumber="93" name="DCH_v2_layer1_cell_930x55559dd741d0">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_930x55559dd741d0_rot" unit="deg" x="0" y="0" z="-174.700510551217"/>
+      </physvol>
+      <physvol copynumber="94" name="DCH_v2_layer1_cell_940x55559dd74390">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_940x55559dd74390_rot" unit="deg" x="0" y="0" z="-176.575510551217"/>
+      </physvol>
+      <physvol copynumber="95" name="DCH_v2_layer1_cell_950x55559dd74570">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_950x55559dd74570_rot" unit="deg" x="0" y="0" z="-178.450510551217"/>
+      </physvol>
+      <physvol copynumber="96" name="DCH_v2_layer1_cell_960x55559dd644e0">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_960x55559dd644e0_rot" unit="deg" x="0" y="0" z="179.674489448783"/>
+      </physvol>
+      <physvol copynumber="97" name="DCH_v2_layer1_cell_970x55559dd646c0">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_970x55559dd646c0_rot" unit="deg" x="0" y="0" z="177.799489448783"/>
+      </physvol>
+      <physvol copynumber="98" name="DCH_v2_layer1_cell_980x55559dd5f4a0">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_980x55559dd5f4a0_rot" unit="deg" x="0" y="0" z="175.924489448783"/>
+      </physvol>
+      <physvol copynumber="99" name="DCH_v2_layer1_cell_990x55559dd62650">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_990x55559dd62650_rot" unit="deg" x="0" y="0" z="174.049489448783"/>
+      </physvol>
+      <physvol copynumber="100" name="DCH_v2_layer1_cell_1000x55559dd62830">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1000x55559dd62830_rot" unit="deg" x="0" y="0" z="172.174489448783"/>
+      </physvol>
+      <physvol copynumber="101" name="DCH_v2_layer1_cell_1010x55559dd62a10">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1010x55559dd62a10_rot" unit="deg" x="0" y="0" z="170.299489448783"/>
+      </physvol>
+      <physvol copynumber="102" name="DCH_v2_layer1_cell_1020x55559dd62c60">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1020x55559dd62c60_rot" unit="deg" x="0" y="0" z="168.424489448783"/>
+      </physvol>
+      <physvol copynumber="103" name="DCH_v2_layer1_cell_1030x55559dd62e40">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1030x55559dd62e40_rot" unit="deg" x="0" y="0" z="166.549489448783"/>
+      </physvol>
+      <physvol copynumber="104" name="DCH_v2_layer1_cell_1040x55559dd71470">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1040x55559dd71470_rot" unit="deg" x="0" y="0" z="164.674489448783"/>
+      </physvol>
+      <physvol copynumber="105" name="DCH_v2_layer1_cell_1050x55559dd71650">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1050x55559dd71650_rot" unit="deg" x="0" y="0" z="162.799489448783"/>
+      </physvol>
+      <physvol copynumber="106" name="DCH_v2_layer1_cell_1060x55559dd99d00">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1060x55559dd99d00_rot" unit="deg" x="0" y="0" z="160.924489448783"/>
+      </physvol>
+      <physvol copynumber="107" name="DCH_v2_layer1_cell_1070x55559dd99ea0">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1070x55559dd99ea0_rot" unit="deg" x="0" y="0" z="159.049489448783"/>
+      </physvol>
+      <physvol copynumber="108" name="DCH_v2_layer1_cell_1080x55559dd9a080">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1080x55559dd9a080_rot" unit="deg" x="0" y="0" z="157.174489448783"/>
+      </physvol>
+      <physvol copynumber="109" name="DCH_v2_layer1_cell_1090x55559dd76070">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1090x55559dd76070_rot" unit="deg" x="0" y="0" z="155.299489448783"/>
+      </physvol>
+      <physvol copynumber="110" name="DCH_v2_layer1_cell_1100x55559dd76230">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1100x55559dd76230_rot" unit="deg" x="0" y="0" z="153.424489448783"/>
+      </physvol>
+      <physvol copynumber="111" name="DCH_v2_layer1_cell_1110x55559dd74640">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1110x55559dd74640_rot" unit="deg" x="0" y="0" z="151.549489448783"/>
+      </physvol>
+      <physvol copynumber="112" name="DCH_v2_layer1_cell_1120x55559dd74820">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1120x55559dd74820_rot" unit="deg" x="0" y="0" z="149.674489448783"/>
+      </physvol>
+      <physvol copynumber="113" name="DCH_v2_layer1_cell_1130x55559dd74a00">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1130x55559dd74a00_rot" unit="deg" x="0" y="0" z="147.799489448783"/>
+      </physvol>
+      <physvol copynumber="114" name="DCH_v2_layer1_cell_1140x55559dd6e870">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1140x55559dd6e870_rot" unit="deg" x="0" y="0" z="145.924489448783"/>
+      </physvol>
+      <physvol copynumber="115" name="DCH_v2_layer1_cell_1150x55559dd6ea50">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1150x55559dd6ea50_rot" unit="deg" x="0" y="0" z="144.049489448783"/>
+      </physvol>
+      <physvol copynumber="116" name="DCH_v2_layer1_cell_1160x55559dd718d0">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1160x55559dd718d0_rot" unit="deg" x="0" y="0" z="142.174489448783"/>
+      </physvol>
+      <physvol copynumber="117" name="DCH_v2_layer1_cell_1170x55559dd71ab0">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1170x55559dd71ab0_rot" unit="deg" x="0" y="0" z="140.299489448783"/>
+      </physvol>
+      <physvol copynumber="118" name="DCH_v2_layer1_cell_1180x55559dd71c90">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1180x55559dd71c90_rot" unit="deg" x="0" y="0" z="138.424489448783"/>
+      </physvol>
+      <physvol copynumber="119" name="DCH_v2_layer1_cell_1190x55559dd7b140">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1190x55559dd7b140_rot" unit="deg" x="0" y="0" z="136.549489448783"/>
+      </physvol>
+      <physvol copynumber="120" name="DCH_v2_layer1_cell_1200x55559dd7b320">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1200x55559dd7b320_rot" unit="deg" x="0" y="0" z="134.674489448783"/>
+      </physvol>
+      <physvol copynumber="121" name="DCH_v2_layer1_cell_1210x55559dd64990">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1210x55559dd64990_rot" unit="deg" x="0" y="0" z="132.799489448783"/>
+      </physvol>
+      <physvol copynumber="122" name="DCH_v2_layer1_cell_1220x55559dd64b70">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1220x55559dd64b70_rot" unit="deg" x="0" y="0" z="130.924489448783"/>
+      </physvol>
+      <physvol copynumber="123" name="DCH_v2_layer1_cell_1230x55559dd84990">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1230x55559dd84990_rot" unit="deg" x="0" y="0" z="129.049489448783"/>
+      </physvol>
+      <physvol copynumber="124" name="DCH_v2_layer1_cell_1240x55559dd84b30">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1240x55559dd84b30_rot" unit="deg" x="0" y="0" z="127.174489448783"/>
+      </physvol>
+      <physvol copynumber="125" name="DCH_v2_layer1_cell_1250x55559dd84d10">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1250x55559dd84d10_rot" unit="deg" x="0" y="0" z="125.299489448783"/>
+      </physvol>
+      <physvol copynumber="129" name="DCH_v2_layer1_cell_1290x55559dd84590">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1290x55559dd84590_rot" unit="deg" x="0" y="0" z="117.799489448783"/>
+      </physvol>
+      <physvol copynumber="130" name="DCH_v2_layer1_cell_1300x55559dd84720">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1300x55559dd84720_rot" unit="deg" x="0" y="0" z="115.924489448783"/>
+      </physvol>
+      <physvol copynumber="131" name="DCH_v2_layer1_cell_1310x55559dd84900">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1310x55559dd84900_rot" unit="deg" x="0" y="0" z="114.049489448783"/>
+      </physvol>
+      <physvol copynumber="132" name="DCH_v2_layer1_cell_1320x55559dd8a4d0">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1320x55559dd8a4d0_rot" unit="deg" x="0" y="0" z="112.174489448783"/>
+      </physvol>
+      <physvol copynumber="133" name="DCH_v2_layer1_cell_1330x55559dd8a6b0">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1330x55559dd8a6b0_rot" unit="deg" x="0" y="0" z="110.299489448783"/>
+      </physvol>
+      <physvol copynumber="134" name="DCH_v2_layer1_cell_1340x55559dd80c00">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1340x55559dd80c00_rot" unit="deg" x="0" y="0" z="108.424489448783"/>
+      </physvol>
+      <physvol copynumber="135" name="DCH_v2_layer1_cell_1350x55559dd80de0">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1350x55559dd80de0_rot" unit="deg" x="0" y="0" z="106.549489448783"/>
+      </physvol>
+      <physvol copynumber="136" name="DCH_v2_layer1_cell_1360x55559dd687d0">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1360x55559dd687d0_rot" unit="deg" x="0" y="0" z="104.674489448783"/>
+      </physvol>
+      <physvol copynumber="137" name="DCH_v2_layer1_cell_1370x55559dd68990">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1370x55559dd68990_rot" unit="deg" x="0" y="0" z="102.799489448783"/>
+      </physvol>
+      <physvol copynumber="138" name="DCH_v2_layer1_cell_1380x55559dd68b70">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1380x55559dd68b70_rot" unit="deg" x="0" y="0" z="100.924489448783"/>
+      </physvol>
+      <physvol copynumber="139" name="DCH_v2_layer1_cell_1390x55559dd696f0">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1390x55559dd696f0_rot" unit="deg" x="0" y="0" z="99.0494894487827"/>
+      </physvol>
+      <physvol copynumber="140" name="DCH_v2_layer1_cell_1400x55559dd698d0">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1400x55559dd698d0_rot" unit="deg" x="0" y="0" z="97.1744894487827"/>
+      </physvol>
+      <physvol copynumber="141" name="DCH_v2_layer1_cell_1410x55559dd69ab0">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1410x55559dd69ab0_rot" unit="deg" x="0" y="0" z="95.2994894487827"/>
+      </physvol>
+      <physvol copynumber="142" name="DCH_v2_layer1_cell_1420x55559dd67790">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1420x55559dd67790_rot" unit="deg" x="0" y="0" z="93.4244894487828"/>
+      </physvol>
+      <physvol copynumber="143" name="DCH_v2_layer1_cell_1430x55559dd67960">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1430x55559dd67960_rot" unit="deg" x="0" y="0" z="91.5494894487827"/>
+      </physvol>
+      <physvol copynumber="144" name="DCH_v2_layer1_cell_1440x55559dd992f0">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1440x55559dd992f0_rot" unit="deg" x="0" y="0" z="89.6744894487827"/>
+      </physvol>
+      <physvol copynumber="145" name="DCH_v2_layer1_cell_1450x55559dd994a0">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1450x55559dd994a0_rot" unit="deg" x="0" y="0" z="87.7994894487828"/>
+      </physvol>
+      <physvol copynumber="146" name="DCH_v2_layer1_cell_1460x55559dd99680">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1460x55559dd99680_rot" unit="deg" x="0" y="0" z="85.9244894487827"/>
+      </physvol>
+      <physvol copynumber="147" name="DCH_v2_layer1_cell_1470x55559dd5fff0">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1470x55559dd5fff0_rot" unit="deg" x="0" y="0" z="84.0494894487827"/>
+      </physvol>
+      <physvol copynumber="148" name="DCH_v2_layer1_cell_1480x55559dd601a0">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1480x55559dd601a0_rot" unit="deg" x="0" y="0" z="82.1744894487827"/>
+      </physvol>
+      <physvol copynumber="149" name="DCH_v2_layer1_cell_1490x55559dd60380">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1490x55559dd60380_rot" unit="deg" x="0" y="0" z="80.2994894487827"/>
+      </physvol>
+      <physvol copynumber="150" name="DCH_v2_layer1_cell_1500x55559dd66580">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1500x55559dd66580_rot" unit="deg" x="0" y="0" z="78.4244894487828"/>
+      </physvol>
+      <physvol copynumber="151" name="DCH_v2_layer1_cell_1510x55559dd66760">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1510x55559dd66760_rot" unit="deg" x="0" y="0" z="76.5494894487828"/>
+      </physvol>
+      <physvol copynumber="152" name="DCH_v2_layer1_cell_1520x55559dd66940">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1520x55559dd66940_rot" unit="deg" x="0" y="0" z="74.6744894487827"/>
+      </physvol>
+      <physvol copynumber="153" name="DCH_v2_layer1_cell_1530x55559dd8eb60">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1530x55559dd8eb60_rot" unit="deg" x="0" y="0" z="72.7994894487827"/>
+      </physvol>
+      <physvol copynumber="154" name="DCH_v2_layer1_cell_1540x55559dd8ed40">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1540x55559dd8ed40_rot" unit="deg" x="0" y="0" z="70.9244894487827"/>
+      </physvol>
+      <physvol copynumber="155" name="DCH_v2_layer1_cell_1550x55559dd65c40">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1550x55559dd65c40_rot" unit="deg" x="0" y="0" z="69.0494894487827"/>
+      </physvol>
+      <physvol copynumber="156" name="DCH_v2_layer1_cell_1560x55559dd65df0">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1560x55559dd65df0_rot" unit="deg" x="0" y="0" z="67.1744894487827"/>
+      </physvol>
+      <physvol copynumber="157" name="DCH_v2_layer1_cell_1570x55559dd65fd0">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1570x55559dd65fd0_rot" unit="deg" x="0" y="0" z="65.2994894487827"/>
+      </physvol>
+      <physvol copynumber="158" name="DCH_v2_layer1_cell_1580x55559dd927c0">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1580x55559dd927c0_rot" unit="deg" x="0" y="0" z="63.4244894487827"/>
+      </physvol>
+      <physvol copynumber="159" name="DCH_v2_layer1_cell_1590x55559dd929a0">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1590x55559dd929a0_rot" unit="deg" x="0" y="0" z="61.5494894487828"/>
+      </physvol>
+      <physvol copynumber="160" name="DCH_v2_layer1_cell_1600x55559dd92b80">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1600x55559dd92b80_rot" unit="deg" x="0" y="0" z="59.6744894487827"/>
+      </physvol>
+      <physvol copynumber="161" name="DCH_v2_layer1_cell_1610x55559dda1a70">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1610x55559dda1a70_rot" unit="deg" x="0" y="0" z="57.7994894487827"/>
+      </physvol>
+      <physvol copynumber="162" name="DCH_v2_layer1_cell_1620x55559dda1c50">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1620x55559dda1c50_rot" unit="deg" x="0" y="0" z="55.9244894487827"/>
+      </physvol>
+      <physvol copynumber="163" name="DCH_v2_layer1_cell_1630x55559dda1e30">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1630x55559dda1e30_rot" unit="deg" x="0" y="0" z="54.0494894487827"/>
+      </physvol>
+      <physvol copynumber="164" name="DCH_v2_layer1_cell_1640x55559dd66de0">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1640x55559dd66de0_rot" unit="deg" x="0" y="0" z="52.1744894487827"/>
+      </physvol>
+      <physvol copynumber="165" name="DCH_v2_layer1_cell_1650x55559dd66fa0">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1650x55559dd66fa0_rot" unit="deg" x="0" y="0" z="50.2994894487827"/>
+      </physvol>
+      <physvol copynumber="166" name="DCH_v2_layer1_cell_1660x55559dd67180">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1660x55559dd67180_rot" unit="deg" x="0" y="0" z="48.4244894487828"/>
+      </physvol>
+      <physvol copynumber="167" name="DCH_v2_layer1_cell_1670x55559dd68e20">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1670x55559dd68e20_rot" unit="deg" x="0" y="0" z="46.5494894487827"/>
+      </physvol>
+      <physvol copynumber="168" name="DCH_v2_layer1_cell_1680x55559dd69000">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1680x55559dd69000_rot" unit="deg" x="0" y="0" z="44.6744894487827"/>
+      </physvol>
+      <physvol copynumber="169" name="DCH_v2_layer1_cell_1690x55559dd691e0">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1690x55559dd691e0_rot" unit="deg" x="0" y="0" z="42.7994894487828"/>
+      </physvol>
+      <physvol copynumber="170" name="DCH_v2_layer1_cell_1700x55559dd6cea0">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1700x55559dd6cea0_rot" unit="deg" x="0" y="0" z="40.9244894487827"/>
+      </physvol>
+      <physvol copynumber="171" name="DCH_v2_layer1_cell_1710x55559dd6d080">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1710x55559dd6d080_rot" unit="deg" x="0" y="0" z="39.0494894487827"/>
+      </physvol>
+      <physvol copynumber="172" name="DCH_v2_layer1_cell_1720x55559dd6d260">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1720x55559dd6d260_rot" unit="deg" x="0" y="0" z="37.1744894487827"/>
+      </physvol>
+      <physvol copynumber="173" name="DCH_v2_layer1_cell_1730x55559dd6ae60">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1730x55559dd6ae60_rot" unit="deg" x="0" y="0" z="35.2994894487827"/>
+      </physvol>
+      <physvol copynumber="174" name="DCH_v2_layer1_cell_1740x55559dd6b040">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1740x55559dd6b040_rot" unit="deg" x="0" y="0" z="33.4244894487828"/>
+      </physvol>
+      <physvol copynumber="175" name="DCH_v2_layer1_cell_1750x55559dd6b220">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1750x55559dd6b220_rot" unit="deg" x="0" y="0" z="31.5494894487828"/>
+      </physvol>
+      <physvol copynumber="176" name="DCH_v2_layer1_cell_1760x55559dd722c0">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1760x55559dd722c0_rot" unit="deg" x="0" y="0" z="29.6744894487827"/>
+      </physvol>
+      <physvol copynumber="177" name="DCH_v2_layer1_cell_1770x55559dd724a0">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1770x55559dd724a0_rot" unit="deg" x="0" y="0" z="27.7994894487827"/>
+      </physvol>
+      <physvol copynumber="178" name="DCH_v2_layer1_cell_1780x55559dd72680">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1780x55559dd72680_rot" unit="deg" x="0" y="0" z="25.9244894487828"/>
+      </physvol>
+      <physvol copynumber="179" name="DCH_v2_layer1_cell_1790x55559dd97450">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1790x55559dd97450_rot" unit="deg" x="0" y="0" z="24.0494894487827"/>
+      </physvol>
+      <physvol copynumber="180" name="DCH_v2_layer1_cell_1800x55559dd97630">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1800x55559dd97630_rot" unit="deg" x="0" y="0" z="22.1744894487827"/>
+      </physvol>
+      <physvol copynumber="181" name="DCH_v2_layer1_cell_1810x55559dd97810">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1810x55559dd97810_rot" unit="deg" x="0" y="0" z="20.2994894487827"/>
+      </physvol>
+      <physvol copynumber="182" name="DCH_v2_layer1_cell_1820x55559dd5b910">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1820x55559dd5b910_rot" unit="deg" x="0" y="0" z="18.4244894487827"/>
+      </physvol>
+      <physvol copynumber="183" name="DCH_v2_layer1_cell_1830x55559dd5baf0">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1830x55559dd5baf0_rot" unit="deg" x="0" y="0" z="16.5494894487828"/>
+      </physvol>
+      <physvol copynumber="184" name="DCH_v2_layer1_cell_1840x55559dd5bcd0">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1840x55559dd5bcd0_rot" unit="deg" x="0" y="0" z="14.6744894487828"/>
+      </physvol>
+      <physvol copynumber="185" name="DCH_v2_layer1_cell_1850x55559dd95cd0">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1850x55559dd95cd0_rot" unit="deg" x="0" y="0" z="12.7994894487827"/>
+      </physvol>
+      <physvol copynumber="186" name="DCH_v2_layer1_cell_1860x55559dd95eb0">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1860x55559dd95eb0_rot" unit="deg" x="0" y="0" z="10.9244894487827"/>
+      </physvol>
+      <physvol copynumber="187" name="DCH_v2_layer1_cell_1870x55559dd96090">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1870x55559dd96090_rot" unit="deg" x="0" y="0" z="9.04948944878272"/>
+      </physvol>
+      <physvol copynumber="188" name="DCH_v2_layer1_cell_1880x55559dd89ab0">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1880x55559dd89ab0_rot" unit="deg" x="0" y="0" z="7.17448944878274"/>
+      </physvol>
+      <physvol copynumber="189" name="DCH_v2_layer1_cell_1890x55559dd89c60">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1890x55559dd89c60_rot" unit="deg" x="0" y="0" z="5.29948944878273"/>
+      </physvol>
+      <physvol copynumber="190" name="DCH_v2_layer1_cell_1900x55559dd89e40">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1900x55559dd89e40_rot" unit="deg" x="0" y="0" z="3.42448944878275"/>
+      </physvol>
+      <physvol copynumber="191" name="DCH_v2_layer1_cell_1910x55559dd8a020">
+        <volumeref ref="DCH_v2_layer1_cell0x55559dd5a810"/>
+        <rotation name="DCH_v2_layer1_cell_1910x55559dd8a020_rot" unit="deg" x="0" y="0" z="1.54948944878274"/>
+      </physvol>
+    </volume>
+  </structure>
+
+  <setup name="Default" version="1.0">
+    <world ref="world_volume0x55559dd7f710"/>
+  </setup>
+
+</gdml>
